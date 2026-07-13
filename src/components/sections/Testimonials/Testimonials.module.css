@@ -7,11 +7,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(
-    ellipse 55% 45% at 50% 0%,
-    color-mix(in srgb, var(--color-gold-highlight) 26%, transparent),
-    transparent
-  );
+  background:
+    radial-gradient(ellipse 50% 45% at 12% 100%, color-mix(in srgb, var(--color-dusty-rose) 24%, transparent), transparent),
+    radial-gradient(ellipse 50% 45% at 88% 0%, color-mix(in srgb, var(--color-lavender-mist) 26%, transparent), transparent);
   pointer-events: none;
 }
 
@@ -39,12 +37,8 @@
   gap: var(--space-5);
 }
 
-.cardCta {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -7,7 +7,19 @@
   padding-block: var(--space-8);
 }
 
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 85% 8%, color-mix(in srgb, var(--color-warm-peach) 38%, transparent), transparent),
+    radial-gradient(ellipse 50% 40% at 8% 95%, color-mix(in srgb, var(--color-lavender-mist) 32%, transparent), transparent);
+  pointer-events: none;
+}
+
 .grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-8);
@@ -22,18 +34,46 @@
   text-align: start;
 }
 
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-end: var(--space-2);
+}
+
+.logoHalo {
+  position: relative;
+  display: inline-flex;
+}
+
+.logoHalo::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-gold-highlight) 55%, transparent), transparent 72%);
+  z-index: -1;
+}
+
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
+  box-shadow: var(--shadow-soft);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
 }
 
 .heading {
   font-size: var(--font-size-display);
-  max-width: 14ch;
+  max-width: 13ch;
 }
 
 .description {
-  max-width: 46ch;
+  max-width: 44ch;
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
 }
@@ -49,19 +89,33 @@
   position: relative;
   justify-self: center;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
 }
 
-.blob {
+.blobGold {
   position: absolute;
-  inset-block-start: -10%;
-  inset-inline-end: -8%;
-  width: 70%;
+  inset-block-start: -14%;
+  inset-inline-end: -12%;
+  width: 62%;
   aspect-ratio: 1;
   border-radius: var(--radius-full);
-  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color-gold-highlight) 0%, transparent 70%);
+  opacity: 0.55;
+  filter: blur(10px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blobRose {
+  position: absolute;
+  inset-block-end: -10%;
+  inset-inline-start: -14%;
+  width: 44%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--color-dusty-rose) 0%, transparent 70%);
   opacity: 0.5;
-  filter: blur(6px);
+  filter: blur(14px);
   z-index: 0;
   pointer-events: none;
 }

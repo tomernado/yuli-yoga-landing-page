@@ -1,17 +1,22 @@
 .card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-5);
+  justify-content: center;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-4);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--color-text);
+  text-align: center;
   transition:
     transform var(--duration-base) var(--ease-calm),
     box-shadow var(--duration-base) var(--ease-calm),
-    border-color var(--duration-base) var(--ease-calm);
+    border-color var(--duration-base) var(--ease-calm),
+    background-color var(--duration-base) var(--ease-calm);
 }
 
 .card:hover {
@@ -20,36 +25,85 @@
   border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
 }
 
+.featured {
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+  background-color: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
+}
+
+.featured:hover {
+  box-shadow: var(--shadow-glow-gold);
+}
+
 .icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: var(--radius-full);
   background-color: var(--color-bg-alt);
   color: var(--color-primary);
+  transition:
+    background-color var(--duration-base) var(--ease-calm),
+    color var(--duration-base) var(--ease-calm);
+}
+
+.card:hover .icon {
+  background-color: var(--color-primary);
+  color: var(--color-mist);
 }
 
 .icon svg {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .text {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  text-align: start;
+  text-align: center;
 }
 
 .title {
   font-weight: 600;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
 }
 
 .subtitle {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .card {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    text-align: start;
+  }
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .icon svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .text {
+    text-align: start;
+  }
+
+  .title {
+    font-size: var(--font-size-md);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
 }

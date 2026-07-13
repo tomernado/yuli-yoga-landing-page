@@ -1,9 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
   height: 100%;
-  padding: var(--space-6);
+  overflow: hidden;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -15,13 +14,45 @@
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-elevated);
   border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
 }
 
+.media {
+  line-height: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+  padding: var(--space-6);
+}
+
 .title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: var(--font-size-lg);
   font-weight: 500;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+
+.icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .description {

@@ -1,18 +1,28 @@
+import portraitSrc from '../../../assets/images/yuli-portrait.jpeg';
+import certificateSrc from '../../../assets/images/yuli-certificate.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
-import { PlaceholderImage } from '../../ui/PlaceholderImage';
 import { Reveal } from '../../motion';
 import styles from './About.module.css';
 
 export function About() {
   return (
-    <Section id="about" tone="alt">
+    <Section id="about" tone="alt" className={styles.section}>
+      <div className={styles.ambient} aria-hidden="true" />
       <div className={styles.grid}>
         <Reveal className={styles.media}>
           <div className={styles.portraitWrap}>
-            <PlaceholderImage label="פורטרט של יולי" ratio="3 / 4" />
+            <img
+              src={portraitSrc}
+              alt="יולי מחייכת ומחזיקה את תעודת ההסמכה שלה כמדריכת יוגה"
+              className={styles.portrait}
+            />
             <div className={styles.badge}>
-              <PlaceholderImage label="תעודת הסמכה" ratio="1 / 1" />
+              <img
+                src={certificateSrc}
+                alt="תעודת הסמכה להוראת יוגה — 200 שעות לימוד, Yoga Tirth"
+                className={styles.badgePhoto}
+              />
             </div>
           </div>
         </Reveal>
@@ -22,20 +32,25 @@ export function About() {
             <Eyebrow>עליי</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className={styles.heading}>יולי</h2>
+            <h2 className={styles.heading}>היי, אני יולי</h2>
           </Reveal>
-          <Reveal delay={0.14}>
-            <p className={styles.paragraph}>
-              היוגה שלי נולדה מתוך צורך אישי להאט, להקשיב לגוף ולמצוא רגע של שקט בתוך יום עמוס. עם השנים היא הפכה
-              לדרך חיים — ולדרך שבה אני הכי אוהבת ללוות אחרים.
-            </p>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className={styles.paragraph}>
-              אני מאמינה שתרגול טוב לא נמדד בגמישות או בביצוע, אלא ביכולת להיות נוכחים עם עצמנו. כל שיעור נבנה
-              בעדינות ובקצב אישי, מתוך הקשבה אמיתית למי שנמצא־ת מולי.
-            </p>
-          </Reveal>
+          <div className={styles.textBlock}>
+            <span className={styles.quoteMark} aria-hidden="true">
+              ”
+            </span>
+            <Reveal delay={0.14}>
+              <p className={styles.paragraph}>
+                היוגה שלי נולדה מתוך צורך אישי להאט, להקשיב לגוף ולמצוא רגע של שקט בתוך יום עמוס. עם השנים היא
+                הפכה לדרך חיים — ולדרך שבה אני הכי אוהבת ללוות אחרים.
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className={styles.paragraph}>
+                אני מאמינה שתרגול טוב לא נמדד בגמישות או בביצוע, אלא ביכולת להיות נוכחים עם עצמנו. כל שיעור נבנה
+                בעדינות ובקצב אישי, מתוך הקשבה אמיתית למי שנמצא־ת מולי.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </div>
     </Section>

@@ -15,11 +15,12 @@
     transform var(--duration-fast) var(--ease-calm),
     background-color var(--duration-fast) var(--ease-calm),
     border-color var(--duration-fast) var(--ease-calm),
-    color var(--duration-fast) var(--ease-calm);
+    color var(--duration-fast) var(--ease-calm),
+    box-shadow var(--duration-base) var(--ease-calm);
 }
 
 .button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .primary {
@@ -29,6 +30,8 @@
 
 .primary:hover {
   background-color: var(--color-primary-strong);
+  box-shadow: var(--shadow-glow-gold);
+  transform: translateY(-2px);
 }
 
 .secondary {
@@ -40,4 +43,6 @@
 .secondary:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  transform: translateY(-2px);
 }

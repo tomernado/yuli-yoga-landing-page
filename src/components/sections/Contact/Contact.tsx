@@ -13,6 +13,7 @@ const CHANNELS = [
     subtitle: 'לשיחה אישית וקביעת שיעור',
     href: CONTACT.whatsapp,
     external: true,
+    featured: true,
   },
   {
     icon: <UsersIcon />,
@@ -39,7 +40,7 @@ const CHANNELS = [
 
 export function Contact() {
   return (
-    <Section id="contact" className={styles.section}>
+    <Section id="contact" tone="alt" className={styles.section}>
       <div className={styles.glow} aria-hidden="true" />
       <div className={styles.header}>
         <Reveal>

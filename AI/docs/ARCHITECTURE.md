@@ -16,7 +16,7 @@ No backend, API, database or worker processes exist or are planned within the cu
 
 # Layer Responsibilities
 
-- **Presentation:** A collection of reusable React components, composed into five page sections — Hero, About, Practice, Classes and Contact — plus a persistent Header and Footer. Layout primitives (`Container`, `Section`) and UI primitives (`Button`, `Card`, `ContactCard`, `Eyebrow`, `PlaceholderImage`) are shared across sections; a `Reveal` motion primitive provides the site's consistent scroll-in behavior.
+- **Presentation:** A collection of reusable React components, composed into six page sections — Hero, About, Practice, Classes, Testimonials and Contact — plus a persistent Header and Footer. Layout primitives (`Container`, `Section`) and UI primitives (`Button`, `Card`, `ContactCard`, `TestimonialCard`, `Eyebrow`, `PlaceholderImage`) are shared across sections; a `Reveal` motion primitive provides the site's consistent scroll-in behavior.
 - **Assets:** Static image assets (logo, photography, placeholders) are organized under `src/assets/images` and bundled as part of the frontend build.
 
 ---
@@ -24,8 +24,9 @@ No backend, API, database or worker processes exist or are planned within the cu
 # Repository Organization
 
 - `AI/` — AI development operating manual, project documentation, templates and approved resource catalog. Not part of the deployed application.
-- `IMG/` — Source image assets at the repository root. These will need to be integrated into the Vite project's asset pipeline (e.g. moved into `public/` or `src/assets/`) when the application is scaffolded.
-- Vite/React application files (`src/`, `public/`, `index.html`, `package.json`) do not exist yet and will be created during initial implementation.
+- `IMG/` — Original source image assets at the repository root (currently only the logo); mirrored into `src/assets/images` for use by the application.
+- `src/` — The Vite/React/TypeScript application (see `PROJECT.md` for its internal structure).
+- `.github/workflows/` — CI: lints and builds on every push/PR, deploys to GitHub Pages on push to `main`.
 
 ---
 

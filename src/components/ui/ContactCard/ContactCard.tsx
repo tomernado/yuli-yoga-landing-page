@@ -7,12 +7,16 @@ interface ContactCardProps {
   subtitle: string;
   href: string;
   external?: boolean;
+  /** Marks the primary conversion channel with a subtle accent treatment. */
+  featured?: boolean;
 }
 
-export function ContactCard({ icon, title, subtitle, href, external }: ContactCardProps) {
+export function ContactCard({ icon, title, subtitle, href, external, featured }: ContactCardProps) {
+  const classes = [styles.card, featured && styles.featured].filter(Boolean).join(' ');
+
   return (
     <a
-      className={styles.card}
+      className={classes}
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}

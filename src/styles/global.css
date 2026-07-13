@@ -1,12 +1,22 @@
 /* Self-hosted fonts (Hebrew + Latin subsets included) — no external font requests. */
-@import '@fontsource/frank-ruhl-libre/400.css';
-@import '@fontsource/frank-ruhl-libre/500.css';
-@import '@fontsource/frank-ruhl-libre/700.css';
-@import '@fontsource/assistant/300.css';
-@import '@fontsource/assistant/400.css';
-@import '@fontsource/assistant/500.css';
-@import '@fontsource/assistant/600.css';
-@import '@fontsource/assistant/700.css';
+@import '@fontsource/frank-ruhl-libre/hebrew-300.css';
+@import '@fontsource/frank-ruhl-libre/hebrew-400.css';
+@import '@fontsource/frank-ruhl-libre/hebrew-500.css';
+@import '@fontsource/frank-ruhl-libre/hebrew-700.css';
+@import '@fontsource/frank-ruhl-libre/latin-300.css';
+@import '@fontsource/frank-ruhl-libre/latin-400.css';
+@import '@fontsource/frank-ruhl-libre/latin-500.css';
+@import '@fontsource/frank-ruhl-libre/latin-700.css';
+@import '@fontsource/heebo/hebrew-300.css';
+@import '@fontsource/heebo/hebrew-400.css';
+@import '@fontsource/heebo/hebrew-500.css';
+@import '@fontsource/heebo/hebrew-600.css';
+@import '@fontsource/heebo/hebrew-700.css';
+@import '@fontsource/heebo/latin-300.css';
+@import '@fontsource/heebo/latin-400.css';
+@import '@fontsource/heebo/latin-500.css';
+@import '@fontsource/heebo/latin-600.css';
+@import '@fontsource/heebo/latin-700.css';
 
 @import './tokens.css';
 
@@ -46,8 +56,9 @@ h3,
 h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 p {

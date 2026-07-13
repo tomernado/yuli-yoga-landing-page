@@ -1,7 +1,8 @@
 /*
   Design tokens for Yuli Yoga.
-  Palette: soft sage / natural stone / warm clay — deliberately avoiding the
-  generic "cream + terracotta" wellness-site default. Grounded, quiet, premium.
+  Palette: soft sage / natural stone / warm clay, enriched with very low-saturation
+  lavender, rose, peach and gold — used only as ambient light and shadow tint,
+  never as flat fill. Grounded, quiet, premium.
 */
 :root {
   /* Color: named on the palette's own terms, not by usage */
@@ -12,6 +13,12 @@
   --color-clay-gold: #c99b6b; /* warm ochre — accent, used sparingly */
   --color-stone-line: #d7d9cc; /* hairline borders / dividers */
   --color-surface: #ffffff; /* lifted surfaces (cards, inputs) — used sparingly */
+
+  /* Enrichment accents — ambient light, glows and tinted shadows only */
+  --color-lavender-mist: #e3dceb;
+  --color-dusty-rose: #ddbfb6;
+  --color-warm-peach: #ecc9a1;
+  --color-gold-highlight: #e8ca8b;
 
   /* Semantic aliases */
   --color-bg: var(--color-mist);
@@ -25,20 +32,22 @@
 
   /* Typography */
   --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
-  --font-body: 'Assistant', 'Segoe UI', sans-serif;
+  --font-body: 'Heebo', 'Segoe UI', sans-serif;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-md: 1.125rem;
   --font-size-lg: 1.375rem;
-  --font-size-xl: clamp(1.75rem, 1.35rem + 2vw, 2.5rem);
-  --font-size-2xl: clamp(2.25rem, 1.35rem + 4.5vw, 3.75rem);
-  --font-size-display: clamp(2.75rem, 1.5rem + 6.5vw, 5.5rem);
+  --font-size-xl: clamp(1.75rem, 1.3rem + 2.2vw, 2.625rem);
+  --font-size-2xl: clamp(2.25rem, 1.2rem + 5vw, 4rem);
+  --font-size-display: clamp(3rem, 1.35rem + 7.8vw, 6.25rem);
 
-  --line-height-tight: 1.15;
-  --line-height-base: 1.6;
-  --letter-spacing-eyebrow: 0.14em;
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.3;
+  --line-height-base: 1.65;
+  --letter-spacing-eyebrow: 0.16em;
+  --letter-spacing-tight: -0.015em;
 
   /* Spacing scale (4px base unit) */
   --space-1: 0.25rem;
@@ -66,8 +75,11 @@
   --radius-lg: 28px;
   --radius-full: 999px;
 
-  /* Elevation — restrained, near-flat by default */
-  --shadow-soft: 0 12px 32px -16px rgb(38 42 34 / 0.18);
+  /* Elevation — restrained, warm-tinted rather than neutral grey */
+  --shadow-soft: 0 12px 32px -16px rgb(90 70 50 / 0.16);
+  --shadow-elevated: 0 24px 48px -20px rgb(90 70 50 / 0.24);
+  --shadow-glow-gold: 0 8px 28px -10px rgb(201 155 107 / 0.45);
+  --shadow-glow-rose: 0 8px 28px -10px rgb(221 191 182 / 0.5);
 
   /* Motion */
   --ease-calm: cubic-bezier(0.4, 0, 0.2, 1);

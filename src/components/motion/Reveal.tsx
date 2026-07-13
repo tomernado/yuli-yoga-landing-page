@@ -19,8 +19,8 @@ export function Reveal({ children, delay = 0, y = 20, className }: RevealProps) 
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
       transition={{ duration: 0.7, delay, ease: EASE_CALM }}
     >
