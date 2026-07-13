@@ -1,0 +1,31 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-mist);
+  opacity: 1;
+  transition: opacity 0.5s var(--ease-calm);
+}
+
+.fadingOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  box-shadow: var(--shadow-elevated);
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+}
