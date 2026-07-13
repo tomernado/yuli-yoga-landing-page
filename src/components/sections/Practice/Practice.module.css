@@ -172,6 +172,10 @@
   border-block-start: 1px solid var(--color-border);
 }
 
+.forWhomButton {
+  align-self: center;
+}
+
 .paragraph {
   max-width: 52ch;
   color: var(--color-text);

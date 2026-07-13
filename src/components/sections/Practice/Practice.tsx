@@ -110,7 +110,7 @@ export function Practice() {
             בין אם זו הפעם הראשונה שלך על המזרן, ובין אם את/ה מחפש/ת להעמיק תרגול קיים — המרחב כאן מותאם
             אליך.
           </p>
-          <Button href="#contact" variant="primary">
+          <Button href="#contact" variant="primary" className={styles.forWhomButton}>
             לשיעור התנסות
           </Button>
         </div>

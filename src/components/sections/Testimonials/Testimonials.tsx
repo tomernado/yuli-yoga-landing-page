@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useInView, useReducedMotion } from 'framer-motion';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { TestimonialCard } from '../../ui/TestimonialCard';
@@ -40,67 +40,77 @@ export function Testimonials() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(wrapperRef, { amount: 0.4 });
 
   useEffect(() => {
-    if (prefersReducedMotion || paused) return undefined;
+    if (!inView) {
+      setIndex(0);
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    if (prefersReducedMotion || paused || !inView) return undefined;
     const timer = setTimeout(() => {
       setIndex((current) => (current + 1) % TESTIMONIALS.length);
     }, AUTO_ROTATE_MS);
     return () => clearTimeout(timer);
-  }, [index, paused, prefersReducedMotion]);
+  }, [index, paused, inView, prefersReducedMotion]);
 
   const current = TESTIMONIALS[index];
 
   return (
     <Section id="testimonials" className={styles.section}>
-      <div className={`${styles.ambient} breathe`} aria-hidden="true" />
-      <div className={styles.header}>
-        <Reveal>
-          <Eyebrow>מה אמרו על התרגול</Eyebrow>
-        </Reveal>
-        <Reveal delay={0.06}>
-          <h2 className={styles.heading}>רגעים מהתרגול, במילים שלהם</h2>
-        </Reveal>
-      </div>
+      <div ref={wrapperRef}>
+        <div className={`${styles.ambient} breathe`} aria-hidden="true" />
+        <div className={styles.header}>
+          <Reveal>
+            <Eyebrow>מה אמרו על התרגול</Eyebrow>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <h2 className={styles.heading}>רגעים מהתרגול, במילים שלהם</h2>
+          </Reveal>
+        </div>
 
-      <div
-        className={styles.stage}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
-      >
-        <AnimatePresence mode="wait">
-          {prefersReducedMotion ? (
-            <div key={index} className={styles.slide}>
-              <TestimonialCard {...current} />
-            </div>
-          ) : (
-            <motion.div
-              key={index}
-              className={styles.slide}
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -28 }}
-              transition={{ duration: 0.55, ease: EASE_CALM }}
-            >
-              <TestimonialCard {...current} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+        <div
+          className={styles.stage}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={() => setPaused(false)}
+        >
+          <AnimatePresence mode="wait">
+            {prefersReducedMotion ? (
+              <div key={index} className={styles.slide}>
+                <TestimonialCard {...current} />
+              </div>
+            ) : (
+              <motion.div
+                key={index}
+                className={styles.slide}
+                initial={{ opacity: 0, x: 28 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -28 }}
+                transition={{ duration: 0.55, ease: EASE_CALM }}
+              >
+                <TestimonialCard {...current} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
-      <div className={styles.dots}>
-        {TESTIMONIALS.map((testimonial, dotIndex) => (
-          <button
-            key={testimonial.name}
-            type="button"
-            className={[styles.dot, dotIndex === index && styles.dotActive].filter(Boolean).join(' ')}
-            aria-label={`עבור להמלצה ${dotIndex + 1} מתוך ${TESTIMONIALS.length}`}
-            aria-current={dotIndex === index}
-            onClick={() => setIndex(dotIndex)}
-          />
-        ))}
+        <div className={styles.dots}>
+          {TESTIMONIALS.map((testimonial, dotIndex) => (
+            <button
+              key={testimonial.name}
+              type="button"
+              className={[styles.dot, dotIndex === index && styles.dotActive].filter(Boolean).join(' ')}
+              aria-label={`עבור להמלצה ${dotIndex + 1} מתוך ${TESTIMONIALS.length}`}
+              aria-current={dotIndex === index}
+              onClick={() => setIndex(dotIndex)}
+            />
+          ))}
+        </div>
       </div>
     </Section>
   );
