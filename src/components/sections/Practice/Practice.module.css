@@ -1,0 +1,85 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  text-align: start;
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+}
+
+.intro {
+  max-width: 56ch;
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-block-start: var(--space-2);
+}
+
+.pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.pillarMark {
+  flex-shrink: 0;
+  margin-block-start: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+}
+
+.pillarTitle {
+  display: block;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.pillarDescription {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-block-start: var(--space-1);
+}
+
+.forWhom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-block-start: var(--space-2);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.paragraph {
+  max-width: 52ch;
+  color: var(--color-text-muted);
+}
+
+.media {
+  align-self: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-9);
+  }
+}

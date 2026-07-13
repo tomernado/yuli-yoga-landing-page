@@ -1,0 +1,8 @@
+.section {
+  padding-block: var(--space-section);
+  scroll-margin-top: var(--header-height);
+}
+
+.alt {
+  background-color: var(--color-bg-alt);
+}

@@ -1,0 +1,58 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.media {
+  justify-self: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.portraitWrap {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  inset-block-end: 6%;
+  inset-inline-start: 6%;
+  width: 38%;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: start;
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+}
+
+.paragraph {
+  max-width: 56ch;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+@media (min-width: 640px) {
+  .badge {
+    inset-block-end: -8%;
+    inset-inline-start: -14%;
+    width: 42%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-9);
+  }
+}

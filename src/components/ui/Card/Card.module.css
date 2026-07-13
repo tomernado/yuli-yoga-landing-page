@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--duration-base) var(--ease-calm),
+    box-shadow var(--duration-base) var(--ease-calm),
+    border-color var(--duration-base) var(--ease-calm);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+.description {
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}

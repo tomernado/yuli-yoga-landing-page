@@ -1,0 +1,84 @@
+/*
+  Design tokens for Yuli Yoga.
+  Palette: soft sage / natural stone / warm clay — deliberately avoiding the
+  generic "cream + terracotta" wellness-site default. Grounded, quiet, premium.
+*/
+:root {
+  /* Color: named on the palette's own terms, not by usage */
+  --color-mist: #eef0ea; /* pale sage-white — primary background */
+  --color-moss-mist: #e3e7db; /* deeper sage — alternate section background */
+  --color-deep-moss: #262a22; /* warm near-black with green undertone — ink */
+  --color-sage: #5c6b4f; /* muted olive-green — primary brand color */
+  --color-clay-gold: #c99b6b; /* warm ochre — accent, used sparingly */
+  --color-stone-line: #d7d9cc; /* hairline borders / dividers */
+  --color-surface: #ffffff; /* lifted surfaces (cards, inputs) — used sparingly */
+
+  /* Semantic aliases */
+  --color-bg: var(--color-mist);
+  --color-bg-alt: var(--color-moss-mist);
+  --color-text: var(--color-deep-moss);
+  --color-text-muted: color-mix(in srgb, var(--color-deep-moss) 70%, transparent);
+  --color-primary: var(--color-sage);
+  --color-primary-strong: color-mix(in srgb, var(--color-sage) 85%, black);
+  --color-accent: var(--color-clay-gold);
+  --color-border: var(--color-stone-line);
+
+  /* Typography */
+  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-body: 'Assistant', 'Segoe UI', sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.375rem;
+  --font-size-xl: clamp(1.75rem, 1.35rem + 2vw, 2.5rem);
+  --font-size-2xl: clamp(2.25rem, 1.35rem + 4.5vw, 3.75rem);
+  --font-size-display: clamp(2.75rem, 1.5rem + 6.5vw, 5.5rem);
+
+  --line-height-tight: 1.15;
+  --line-height-base: 1.6;
+  --letter-spacing-eyebrow: 0.14em;
+
+  /* Spacing scale (4px base unit) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Section rhythm — fluid vertical spacing */
+  --space-section: clamp(var(--space-8), 6vw + 2rem, var(--space-10));
+
+  /* Layout */
+  --container-width: 1180px;
+  --container-padding: clamp(var(--space-4), 4vw, var(--space-7));
+  --header-height: 4.5rem;
+
+  /* Radius — soft, organic, never a hard corner */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
+
+  /* Elevation — restrained, near-flat by default */
+  --shadow-soft: 0 12px 32px -16px rgb(38 42 34 / 0.18);
+
+  /* Motion */
+  --ease-calm: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+  --duration-breath: 5.5s; /* the site's signature ambient breathing rhythm */
+
+  /* Breakpoints (referenced in comments; media queries use raw px, min-width/mobile-first) */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
