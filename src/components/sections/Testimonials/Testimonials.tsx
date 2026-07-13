@@ -56,10 +56,10 @@ export function Testimonials() {
       <div className={`${styles.ambient} breathe`} aria-hidden="true" />
       <div className={styles.header}>
         <Reveal>
-          <Eyebrow>מה אומרות המתרגלות</Eyebrow>
+          <Eyebrow>מה אמרו על התרגול</Eyebrow>
         </Reveal>
         <Reveal delay={0.06}>
-          <h2 className={styles.heading}>רגעים מהתרגול, במילים שלהן</h2>
+          <h2 className={styles.heading}>רגעים מהתרגול, במילים שלהם</h2>
         </Reveal>
       </div>
 

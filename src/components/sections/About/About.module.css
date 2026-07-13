@@ -37,9 +37,9 @@
 .portrait {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 85%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-elevated);
 }
@@ -48,11 +48,16 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
   font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--color-text-muted);
   text-decoration: underline;
   text-underline-offset: 3px;
+  cursor: pointer;
   transition: color var(--duration-fast) var(--ease-calm);
 }
 

@@ -68,7 +68,7 @@
   /* Layout */
   --container-width: 1180px;
   --container-padding: clamp(var(--space-4), 4vw, var(--space-7));
-  --header-height: 4.5rem;
+  --header-height: 3.75rem;
 
   /* Radius — soft, organic, never a hard corner */
   --radius-sm: 6px;

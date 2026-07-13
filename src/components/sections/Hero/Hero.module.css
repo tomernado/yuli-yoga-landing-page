@@ -123,6 +123,12 @@
 }
 
 .secondaryOnPhoto {
-  background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
-  border-color: color-mix(in srgb, var(--color-surface) 40%, var(--color-border));
+  background-color: color-mix(in srgb, var(--color-surface) 28%, transparent);
+  border-color: color-mix(in srgb, var(--color-surface) 65%, transparent);
+  color: var(--color-primary-strong);
+  backdrop-filter: blur(6px);
+}
+
+.secondaryOnPhoto:hover {
+  background-color: color-mix(in srgb, var(--color-surface) 45%, transparent);
 }

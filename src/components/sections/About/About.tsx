@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import portraitSrc from '../../../assets/images/yuli-portrait.jpeg';
 import certificateSrc from '../../../assets/images/yuli-certificate.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
+import { Lightbox } from '../../ui/Lightbox';
 import { ImageIcon } from '../../icons';
 import { Reveal } from '../../motion';
 import styles from './About.module.css';
 
+const CERTIFICATE_ALT = 'תעודת ההסמכה של יולי כמדריכת יוגה';
+
 export function About() {
+  const [isCertificateOpen, setIsCertificateOpen] = useState(false);
+
   return (
     <Section id="about" tone="alt" className={styles.section}>
       <div className={`${styles.ambient} breathe`} aria-hidden="true" />
@@ -17,15 +23,14 @@ export function About() {
             alt="יולי מחייכת ומחזיקה את תעודת ההסמכה שלה כמדריכת יוגה"
             className={styles.portrait}
           />
-          <a
-            href={certificateSrc}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => setIsCertificateOpen(true)}
             className={styles.certificateLink}
           >
             <ImageIcon className={styles.certificateIcon} />
             צפו בתעודת ההסמכה
-          </a>
+          </button>
         </Reveal>
 
         <div className={styles.content}>
@@ -54,6 +59,10 @@ export function About() {
           </div>
         </div>
       </div>
+
+      {isCertificateOpen && (
+        <Lightbox src={certificateSrc} alt={CERTIFICATE_ALT} onClose={() => setIsCertificateOpen(false)} />
+      )}
     </Section>
   );
 }
