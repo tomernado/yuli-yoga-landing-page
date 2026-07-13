@@ -24,8 +24,15 @@ export function PlaceholderImage({
   return (
     <div className={classes} data-tone={tone} style={{ aspectRatio: ratio }} role="img" aria-label={label}>
       <span className={styles.frame} aria-hidden="true" />
-      <ImageIcon className={styles.icon} />
-      <span className={styles.label}>{label}</span>
+      <span className={styles.motif} aria-hidden="true">
+        <span className={`${styles.ring} ${styles.ringOuter}`} />
+        <span className={`${styles.ring} ${styles.ringMid}`} />
+        <span className={`${styles.ring} ${styles.ringInner}`} />
+      </span>
+      <span className={styles.content}>
+        <ImageIcon className={styles.icon} />
+        <span className={styles.label}>{label}</span>
+      </span>
     </div>
   );
 }

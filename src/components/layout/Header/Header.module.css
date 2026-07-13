@@ -5,9 +5,18 @@
   height: var(--header-height);
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--duration-slow) var(--ease-calm),
+    border-color var(--duration-slow) var(--ease-calm),
+    backdrop-filter var(--duration-slow) var(--ease-calm);
+}
+
+.scrolled {
   background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom-color: var(--color-border);
 }
 
 .inner {
@@ -39,7 +48,7 @@
   position: relative;
   padding-block: var(--space-1);
   font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
   color: var(--color-text-muted);
   transition: color var(--duration-fast) var(--ease-calm);

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Button } from '../../ui/Button';
 import { Container } from '../Container';
 import styles from './Header.module.css';
@@ -11,8 +12,17 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={[styles.header, scrolled && styles.scrolled].filter(Boolean).join(' ')}>
       <Container className={styles.inner}>
         <a href="#top" className={styles.brand}>
           יולי יוגה
@@ -24,7 +34,7 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <Button href="#contact" variant="primary" className={styles.cta}>
+        <Button href="#contact" variant={scrolled ? 'primary' : 'secondary'} className={styles.cta}>
           בואו נתחיל
         </Button>
       </Container>

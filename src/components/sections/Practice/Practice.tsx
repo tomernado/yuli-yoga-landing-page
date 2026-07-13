@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import practiceImageSrc from '../../../assets/images/practice-session.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { Button } from '../../ui/Button';
-import { PlaceholderImage } from '../../ui/PlaceholderImage';
 import { Reveal, EASE_CALM } from '../../motion';
 import { BreathIcon, MovementIcon, PresenceIcon, LeafIcon, HeartIcon } from '../../icons';
 import styles from './Practice.module.css';
@@ -66,7 +66,7 @@ export function Practice() {
         </motion.ul>
 
         <Reveal delay={0.1} className={styles.media}>
-          <PlaceholderImage label="תמונה: מהתרגול" ratio="4 / 3" tone="lavender" />
+          <img src={practiceImageSrc} alt="תרגול יוגה תחת גג קש בטבע" className={styles.mediaImage} />
         </Reveal>
       </div>
 

@@ -104,6 +104,15 @@
   width: 100%;
 }
 
+.mediaImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
 .forWhom {
   position: relative;
   z-index: 1;

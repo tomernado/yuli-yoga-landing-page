@@ -77,7 +77,7 @@
 
 .heading {
   font-size: var(--font-size-display);
-  max-width: 14ch;
+  font-weight: 700;
 }
 
 .description {
@@ -184,6 +184,11 @@
 .image {
   position: relative;
   z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
 }
 
 @media (min-width: 1024px) {

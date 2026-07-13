@@ -47,11 +47,11 @@ export function Contact() {
           <Eyebrow>בואו נתחיל</Eyebrow>
         </Reveal>
         <Reveal delay={0.06}>
-          <h2 className={styles.heading}>מוכנים לתרגול הראשון שלכם?</h2>
+          <h2 className={styles.heading}>כל התחלה מתחילה בצעד קטן</h2>
         </Reveal>
         <Reveal delay={0.12}>
           <p className={styles.paragraph}>
-            כתבו לי כמה מילים, ונמצא יחד את המסגרת והזמן שמתאימים לכם. אשמח ללוות אתכם צעד אחר צעד.
+            כתבו לי כמה מילים, ואשמח ללוות אתכם לתרגול הראשון — בקצב שלכם, בלי לחץ.
           </p>
         </Reveal>
       </div>

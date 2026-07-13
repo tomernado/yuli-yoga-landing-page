@@ -1,3 +1,4 @@
+import partnerImageSrc from '../../../assets/images/partner-practice.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { Card } from '../../ui/Card';
@@ -13,21 +14,21 @@ const FORMATS = [
     description: 'תרגול משותף באנרגיה נעימה, בקבוצות קטנות ואינטימיות שמזמינות התקדמות בקצב שלך.',
     Icon: UsersIcon,
     tone: 'gold' as const,
-    imageLabel: 'תמונה: שיעור קבוצתי',
+    media: <PlaceholderImage label="תמונה: שיעור קבוצתי" ratio="16 / 10" tone="gold" />,
   },
   {
     title: 'שיעורים פרטיים',
     description: 'ליווי אישי ומותאם לחלוטין — לגוף, לצרכים ולמטרות שלך, בזמן ובמקום שנוחים לך.',
     Icon: PersonIcon,
     tone: 'rose' as const,
-    imageLabel: 'תמונה: שיעור פרטי',
+    media: <PlaceholderImage label="תמונה: שיעור פרטי" ratio="16 / 10" tone="rose" />,
   },
   {
     title: 'שיעורי זוגות',
     description: 'תרגול משותף עם בן/בת זוג, חבר/ה או קרוב/ה — לרגע של חיבור מחודש, יחד.',
     Icon: HeartIcon,
     tone: 'lavender' as const,
-    imageLabel: 'תמונה: שיעור זוגי',
+    media: <img src={partnerImageSrc} alt="זוג מתרגלים אקרו-יוגה יחד" className={styles.cardImage} />,
   },
 ];
 
@@ -52,7 +53,7 @@ export function Classes() {
               description={format.description}
               icon={<format.Icon />}
               tone={format.tone}
-              media={<PlaceholderImage label={format.imageLabel} ratio="16 / 10" tone={format.tone} />}
+              media={format.media}
             >
               <Button href="#contact" variant="secondary" className={styles.cardCta}>
                 לפרטים ותיאום

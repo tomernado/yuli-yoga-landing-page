@@ -40,6 +40,75 @@
   pointer-events: none;
 }
 
+/* Decorative concentric breath-rings — a quiet piece of brand art standing in for the
+   photo, rippling outward like a slow exhale rather than sitting empty. */
+.motif {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+@keyframes ring-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.ring {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+  border: 1px solid currentColor;
+  color: var(--color-primary);
+  animation: ring-pulse 5.5s var(--ease-calm) infinite;
+}
+
+.placeholder[data-tone='gold'] .ring {
+  color: var(--color-clay-gold);
+}
+
+.placeholder[data-tone='rose'] .ring {
+  color: var(--color-dusty-rose);
+}
+
+.placeholder[data-tone='lavender'] .ring {
+  color: var(--color-lavender-mist);
+}
+
+.ringOuter {
+  width: 62%;
+  opacity: 0.16;
+  animation-delay: 0s;
+}
+
+.ringMid {
+  width: 42%;
+  opacity: 0.26;
+  animation-delay: 0.9s;
+}
+
+.ringInner {
+  width: 24%;
+  opacity: 0.38;
+  animation-delay: 1.8s;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .icon {
   width: 28px;
   height: 28px;
