@@ -34,7 +34,7 @@ const FORMATS = [
 export function Classes() {
   return (
     <Section id="classes" tone="alt" className={styles.section}>
-      <div className={styles.ambient} aria-hidden="true" />
+      <div className={`${styles.ambient} breathe`} aria-hidden="true" />
       <div className={styles.header}>
         <Reveal>
           <Eyebrow>מסגרות התרגול</Eyebrow>
@@ -51,6 +51,7 @@ export function Classes() {
               title={format.title}
               description={format.description}
               icon={<format.Icon />}
+              tone={format.tone}
               media={<PlaceholderImage label={format.imageLabel} ratio="16 / 10" tone={format.tone} />}
             >
               <Button href="#contact" variant="secondary" className={styles.cardCta}>

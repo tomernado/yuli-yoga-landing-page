@@ -30,7 +30,7 @@ export function Practice() {
 
   return (
     <Section id="practice" className={styles.section}>
-      <div className={styles.ambient} aria-hidden="true" />
+      <div className={`${styles.ambient} breathe`} aria-hidden="true" />
       <div className={styles.intro}>
         <Reveal>
           <Eyebrow>התרגול</Eyebrow>

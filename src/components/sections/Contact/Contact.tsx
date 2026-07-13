@@ -41,7 +41,7 @@ const CHANNELS = [
 export function Contact() {
   return (
     <Section id="contact" tone="alt" className={styles.section}>
-      <div className={styles.glow} aria-hidden="true" />
+      <div className={`${styles.glow} breathe`} aria-hidden="true" />
       <div className={styles.header}>
         <Reveal>
           <Eyebrow>בואו נתחיל</Eyebrow>

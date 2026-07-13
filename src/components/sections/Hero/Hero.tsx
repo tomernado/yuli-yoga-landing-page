@@ -9,6 +9,8 @@ import { Reveal } from '../../motion';
 import { CONTACT } from '../../../constants/contact';
 import styles from './Hero.module.css';
 
+const HIGHLIGHTS = ['מתאים לכל גיל ולכל רמה', 'גם בלי ניסיון קודם', 'קבוצות קטנות ואווירה אישית'];
+
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -18,7 +20,7 @@ export function Hero() {
 
   return (
     <section id="hero" ref={ref} className={styles.hero}>
-      <div className={styles.ambient} aria-hidden="true" />
+      <div className={`${styles.ambient} breathe`} aria-hidden="true" />
       <Container className={styles.grid}>
         <div className={styles.content}>
           <Reveal className={styles.brandRow}>
@@ -28,17 +30,27 @@ export function Hero() {
             <span className={styles.wordmark}>יולי יוגה</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <Eyebrow>תרגול אישי ורגוע</Eyebrow>
+            <Eyebrow>האטה · יין יוגה · נשימה · תנועה</Eyebrow>
           </Reveal>
           <Reveal delay={0.14}>
-            <h1 className={styles.heading}>מרחב שקט לנשום, לזוז ולחזור אל עצמך</h1>
+            <h1 className={styles.heading}>מקום לעצור, לנשום ולהתחבר לעצמך.</h1>
           </Reveal>
-          <Reveal delay={0.22}>
-            <p className={styles.description}>
-              יולי מלווה אתכם בתרגול יוגה אישי ורגוע, בקצב שלכם — לבהירות, לגמישות ולנוכחות מחודשת בגוף ובנפש.
-            </p>
+          <Reveal delay={0.2}>
+            <p className={styles.description}>מורה להאטה וין יוגה, בדגש על זכות הבחירה בטוב.</p>
           </Reveal>
-          <Reveal delay={0.3}>
+          <Reveal delay={0.26}>
+            <ul className={styles.highlights}>
+              {HIGHLIGHTS.map((item) => (
+                <li key={item} className={styles.highlight}>
+                  <span className={styles.check} aria-hidden="true">
+                    ✓
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.32}>
             <div className={styles.actions}>
               <Button href={CONTACT.whatsapp} external>
                 קביעת שיעור ראשון
@@ -50,11 +62,16 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.18} className={styles.imageWrap}>
-          <motion.div className={styles.blobGold} style={{ y: blobY }} aria-hidden="true" />
-          <motion.div className={styles.blobRose} style={{ y: blobYSlow }} aria-hidden="true" />
-          <PlaceholderImage label="תמונה: תרגול בסטודיו" ratio="4 / 5" tone="gold" className={styles.image} />
-        </Reveal>
+        <div className={styles.mediaCol}>
+          <Reveal delay={0.18} className={styles.imageWrap}>
+            <motion.div className={styles.blobGold} style={{ y: blobY }} aria-hidden="true" />
+            <motion.div className={styles.blobRose} style={{ y: blobYSlow }} aria-hidden="true" />
+            <PlaceholderImage label="תמונה: תרגול בסטודיו" ratio="4 / 5" tone="gold" className={styles.image} />
+          </Reveal>
+          <Reveal delay={0.4}>
+            <p className={styles.caption}>בית של נשימה, תנועה, שהייה, הרפיה, שלווה — והמון אהבה.</p>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );

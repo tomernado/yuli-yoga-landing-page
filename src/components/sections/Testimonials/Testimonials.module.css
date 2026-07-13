@@ -8,9 +8,10 @@
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 50% 45% at 12% 100%, color-mix(in srgb, var(--color-dusty-rose) 24%, transparent), transparent),
-    radial-gradient(ellipse 50% 45% at 88% 0%, color-mix(in srgb, var(--color-lavender-mist) 26%, transparent), transparent);
+    radial-gradient(ellipse 50% 45% at 12% 100%, color-mix(in srgb, var(--color-dusty-rose) 32%, transparent), transparent),
+    radial-gradient(ellipse 50% 45% at 88% 0%, color-mix(in srgb, var(--color-lavender-mist) 34%, transparent), transparent);
   pointer-events: none;
+  animation-delay: 3.2s;
 }
 
 .header {
@@ -29,16 +30,77 @@
   font-size: var(--font-size-2xl);
 }
 
-.grid {
+.track {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--container-padding);
+  -webkit-overflow-scrolling: touch;
+  margin-inline: calc(var(--container-padding) * -1);
+  padding-inline: var(--container-padding);
+  padding-block-end: var(--space-2);
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 86%;
+  scroll-snap-align: center;
+}
+
+.revealFill {
+  height: 100%;
+}
+
+.dots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-block-start: var(--space-5);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-base) var(--ease-calm),
+    transform var(--duration-base) var(--ease-calm);
+}
+
+.dotActive {
+  background-color: var(--color-primary);
+  transform: scale(1.3);
 }
 
 @media (min-width: 700px) {
-  .grid {
+  .track {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+    scroll-snap-type: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .slide {
+    flex: initial;
+    scroll-snap-align: none;
+  }
+
+  .dots {
+    display: none;
   }
 }

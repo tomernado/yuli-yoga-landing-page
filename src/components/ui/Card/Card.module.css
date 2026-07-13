@@ -48,6 +48,28 @@
   border-radius: var(--radius-full);
   background-color: var(--color-bg-alt);
   color: var(--color-primary);
+  transition:
+    transform var(--duration-base) var(--ease-calm),
+    background-color var(--duration-base) var(--ease-calm);
+}
+
+.card:hover .icon {
+  transform: scale(1.08);
+}
+
+.icon[data-tone='gold'] {
+  background-color: color-mix(in srgb, var(--color-gold-highlight) 40%, var(--color-bg-alt));
+  color: color-mix(in srgb, var(--color-clay-gold) 85%, black);
+}
+
+.icon[data-tone='rose'] {
+  background-color: color-mix(in srgb, var(--color-dusty-rose) 45%, var(--color-bg-alt));
+  color: color-mix(in srgb, var(--color-dusty-rose) 55%, var(--color-deep-moss));
+}
+
+.icon[data-tone='lavender'] {
+  background-color: color-mix(in srgb, var(--color-lavender-mist) 50%, var(--color-bg-alt));
+  color: color-mix(in srgb, var(--color-lavender-mist) 35%, var(--color-deep-moss));
 }
 
 .icon svg {

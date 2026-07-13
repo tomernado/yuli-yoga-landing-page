@@ -7,12 +7,11 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(
-    ellipse 55% 45% at 50% 0%,
-    color-mix(in srgb, var(--color-gold-highlight) 26%, transparent),
-    transparent
-  );
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 0%, color-mix(in srgb, var(--color-gold-highlight) 36%, transparent), transparent),
+    radial-gradient(ellipse 40% 40% at 95% 95%, color-mix(in srgb, var(--color-dusty-rose) 20%, transparent), transparent);
   pointer-events: none;
+  animation-delay: 2.4s;
 }
 
 .header {

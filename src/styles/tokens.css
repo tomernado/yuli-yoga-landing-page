@@ -18,6 +18,7 @@
   --color-lavender-mist: #e3dceb;
   --color-dusty-rose: #ddbfb6;
   --color-warm-peach: #ecc9a1;
+  --color-warm-sand: #e6d9c3;
   --color-gold-highlight: #e8ca8b;
 
   /* Semantic aliases */
@@ -31,8 +32,8 @@
   --color-border: var(--color-stone-line);
 
   /* Typography */
-  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
-  --font-body: 'Heebo', 'Segoe UI', sans-serif;
+  --font-display: 'David Libre', 'Times New Roman', serif;
+  --font-body: 'Rubik', 'Segoe UI', sans-serif;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;

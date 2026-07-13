@@ -2,29 +2,30 @@ import portraitSrc from '../../../assets/images/yuli-portrait.jpeg';
 import certificateSrc from '../../../assets/images/yuli-certificate.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
+import { ImageIcon } from '../../icons';
 import { Reveal } from '../../motion';
 import styles from './About.module.css';
 
 export function About() {
   return (
     <Section id="about" tone="alt" className={styles.section}>
-      <div className={styles.ambient} aria-hidden="true" />
+      <div className={`${styles.ambient} breathe`} aria-hidden="true" />
       <div className={styles.grid}>
         <Reveal className={styles.media}>
-          <div className={styles.portraitWrap}>
-            <img
-              src={portraitSrc}
-              alt="יולי מחייכת ומחזיקה את תעודת ההסמכה שלה כמדריכת יוגה"
-              className={styles.portrait}
-            />
-            <div className={styles.badge}>
-              <img
-                src={certificateSrc}
-                alt="תעודת הסמכה להוראת יוגה — 200 שעות לימוד, Yoga Tirth"
-                className={styles.badgePhoto}
-              />
-            </div>
-          </div>
+          <img
+            src={portraitSrc}
+            alt="יולי מחייכת ומחזיקה את תעודת ההסמכה שלה כמדריכת יוגה"
+            className={styles.portrait}
+          />
+          <a
+            href={certificateSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.certificateLink}
+          >
+            <ImageIcon className={styles.certificateIcon} />
+            צפו בתעודת ההסמכה
+          </a>
         </Reveal>
 
         <div className={styles.content}>
