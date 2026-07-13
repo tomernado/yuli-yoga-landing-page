@@ -33,8 +33,8 @@ export function Hero() {
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className={styles.heading}>
-            מקום לעצור,
-            <br />
+            מקום לעצור,{' '}
+            <br className={styles.softBreak} />
             לנשום
             <br />
             ולהתחבר לעצמך.

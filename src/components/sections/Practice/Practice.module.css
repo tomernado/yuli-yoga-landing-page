@@ -46,31 +46,63 @@
 }
 
 .pillars {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-5);
+}
+
+.pillars::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset-block: 2.6rem;
+  inset-inline-start: 3.625rem;
+  width: 1.5px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 25%, transparent) 12%,
+    color-mix(in srgb, var(--color-primary) 25%, transparent) 88%,
+    transparent
+  );
 }
 
 .pillar {
+  --tint: var(--color-primary);
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 3.25rem 1fr;
   align-items: center;
-  column-gap: var(--space-4);
-  row-gap: var(--space-1);
-  padding: var(--space-4) var(--space-5);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  column-gap: var(--space-5);
+  row-gap: var(--space-2);
+  padding: var(--space-5) var(--space-6);
+  margin-inline-end: 0;
+  background-color: color-mix(in srgb, var(--color-warm-sand) 9%, var(--color-surface));
+  background-image: radial-gradient(
+    ellipse 70% 90% at 100% 0%,
+    color-mix(in srgb, var(--tint) 12%, transparent),
+    transparent 70%
+  );
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 22px -20px rgb(90 70 50 / 0.16);
   transition:
     transform var(--duration-base) var(--ease-calm),
-    box-shadow var(--duration-base) var(--ease-calm),
-    border-color var(--duration-base) var(--ease-calm);
+    margin-inline-end var(--duration-base) var(--ease-calm);
+}
+
+.pillar:nth-child(even) {
+  margin-inline-end: var(--space-6);
+  background-image: radial-gradient(
+    ellipse 70% 90% at 100% 100%,
+    color-mix(in srgb, var(--tint) 12%, transparent),
+    transparent 70%
+  );
 }
 
 .pillar:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
-  border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+  transform: translateY(-2px);
 }
 
 .pillarIcon {
@@ -78,26 +110,30 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: var(--radius-full);
-  background-color: var(--color-bg-alt);
-  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--tint) 20%, var(--color-bg-alt));
+  color: color-mix(in srgb, var(--tint) 60%, var(--color-primary));
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--tint) 7%, transparent);
 }
 
 .pillarIcon svg {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .pillarTitle {
-  font-weight: 600;
-  font-size: var(--font-size-md);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-tight);
+  color: color-mix(in srgb, var(--tint) 30%, var(--color-text));
 }
 
 .pillarDescription {
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
 }
 
 .media {
@@ -148,5 +184,11 @@
   .grid {
     grid-template-columns: 1.1fr 0.9fr;
     gap: var(--space-9);
+    align-items: start;
+  }
+
+  .media {
+    max-width: 240px;
+    margin-inline: auto;
   }
 }

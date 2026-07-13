@@ -1,29 +1,55 @@
+import type { CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import practiceImage2Src from '../../../assets/images/practice-2.jpeg';
 import practiceImage3Src from '../../../assets/images/practice-3.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { Button } from '../../ui/Button';
-import { Reveal, EASE_CALM } from '../../motion';
+import { Reveal } from '../../motion';
 import { BreathIcon, MovementIcon, PresenceIcon, LeafIcon, HeartIcon } from '../../icons';
 import styles from './Practice.module.css';
 
 const PILLARS = [
-  { title: 'נשימה', description: 'לב התרגול — דרך פשוטה לחזור אל הרגע הזה.', Icon: BreathIcon },
-  { title: 'תנועה', description: 'זרימה עדינה שמזמינה את הגוף להשתחרר.', Icon: MovementIcon },
-  { title: 'נוכחות', description: 'תשומת לב שקטה, בלי שיפוטיות ובלי מירוץ.', Icon: PresenceIcon },
-  { title: 'הרפיה', description: 'מרחב לעצור, לנשום ולהניח את מה שכבד.', Icon: LeafIcon },
-  { title: 'חיבור לעצמך', description: 'התרגול כדרך להכיר את עצמך מחדש.', Icon: HeartIcon },
+  {
+    title: 'נשימה',
+    description: 'לב התרגול — דרך פשוטה לחזור אל הרגע הזה.',
+    Icon: BreathIcon,
+    tint: 'var(--color-lavender-mist)',
+  },
+  {
+    title: 'תנועה',
+    description: 'זרימה עדינה שמזמינה את הגוף להשתחרר.',
+    Icon: MovementIcon,
+    tint: 'var(--color-warm-peach)',
+  },
+  {
+    title: 'נוכחות',
+    description: 'תשומת לב שקטה, בלי שיפוטיות ובלי מירוץ.',
+    Icon: PresenceIcon,
+    tint: 'var(--color-clay-gold)',
+  },
+  {
+    title: 'הרפיה',
+    description: 'מרחב לעצור, לנשום ולהניח את מה שכבד.',
+    Icon: LeafIcon,
+    tint: 'var(--color-dusty-rose)',
+  },
+  {
+    title: 'חיבור לעצמך',
+    description: 'התרגול כדרך להכיר את עצמך מחדש.',
+    Icon: HeartIcon,
+    tint: 'var(--color-sage)',
+  },
 ];
 
 const listVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 18, scale: 0.97 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE_CALM } },
+  hidden: (index: number) => ({ opacity: 0, x: index % 2 === 0 ? -16 : 16 }),
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 export function Practice() {
@@ -55,8 +81,14 @@ export function Practice() {
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           variants={listVariants}
         >
-          {PILLARS.map(({ title, description, Icon }) => (
-            <motion.li key={title} className={styles.pillar} variants={itemVariants}>
+          {PILLARS.map(({ title, description, Icon, tint }, index) => (
+            <motion.li
+              key={title}
+              className={styles.pillar}
+              style={{ '--tint': tint } as CSSProperties}
+              custom={index}
+              variants={itemVariants}
+            >
               <span className={styles.pillarIcon}>
                 <Icon />
               </span>
