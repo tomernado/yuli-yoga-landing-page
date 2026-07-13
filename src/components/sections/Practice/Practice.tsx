@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import practiceImageSrc from '../../../assets/images/practice-session.jpeg';
+import practiceImage1Src from '../../../assets/images/practice-1.jpeg';
+import practiceImage2Src from '../../../assets/images/practice-2.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { Button } from '../../ui/Button';
@@ -66,7 +67,8 @@ export function Practice() {
         </motion.ul>
 
         <Reveal delay={0.1} className={styles.media}>
-          <img src={practiceImageSrc} alt="תרגול יוגה תחת גג קש בטבע" className={styles.mediaImage} />
+          <img src={practiceImage1Src} alt="תרגול יוגה תחת גג קש בטבע" className={styles.mediaImage} loading="lazy" />
+          <img src={practiceImage2Src} alt="רגע של חיבור בסיום התרגול" className={styles.mediaImage} loading="lazy" />
         </Reveal>
       </div>
 

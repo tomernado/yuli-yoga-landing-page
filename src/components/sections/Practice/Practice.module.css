@@ -101,16 +101,27 @@
 }
 
 .media {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-3);
   width: 100%;
 }
 
 .mediaImage {
+  flex: 1;
+  min-width: 0;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 35%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 1024px) {
+  .media {
+    flex-direction: column;
+  }
 }
 
 .forWhom {

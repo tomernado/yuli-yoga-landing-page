@@ -1,9 +1,10 @@
+import groupImageSrc from '../../../assets/images/classes-group.jpeg';
+import privateImageSrc from '../../../assets/images/practice-1.jpeg';
 import partnerImageSrc from '../../../assets/images/partner-practice.jpeg';
 import { Section } from '../../layout/Section';
 import { Eyebrow } from '../../ui/Eyebrow';
 import { Card } from '../../ui/Card';
 import { Button } from '../../ui/Button';
-import { PlaceholderImage } from '../../ui/PlaceholderImage';
 import { Reveal } from '../../motion';
 import { UsersIcon, PersonIcon, HeartIcon } from '../../icons';
 import styles from './Classes.module.css';
@@ -14,14 +15,21 @@ const FORMATS = [
     description: 'תרגול משותף באנרגיה נעימה, בקבוצות קטנות ואינטימיות שמזמינות התקדמות בקצב שלך.',
     Icon: UsersIcon,
     tone: 'gold' as const,
-    media: <PlaceholderImage label="תמונה: שיעור קבוצתי" ratio="16 / 10" tone="gold" />,
+    media: <img src={groupImageSrc} alt="שיעור קבוצתי בטבע, מתרגלים ומתרגלות מכל הגילאים" className={styles.cardImage} />,
   },
   {
     title: 'שיעורים פרטיים',
     description: 'ליווי אישי ומותאם לחלוטין — לגוף, לצרכים ולמטרות שלך, בזמן ובמקום שנוחים לך.',
     Icon: PersonIcon,
     tone: 'rose' as const,
-    media: <PlaceholderImage label="תמונה: שיעור פרטי" ratio="16 / 10" tone="rose" />,
+    media: (
+      <img
+        src={privateImageSrc}
+        alt="שיעור אישי, תרגול מדיטציה בישיבה"
+        className={styles.cardImage}
+        style={{ objectPosition: 'center 48%' }}
+      />
+    ),
   },
   {
     title: 'שיעורי זוגות',

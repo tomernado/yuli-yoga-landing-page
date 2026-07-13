@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '../../ui/Button';
+import { Logo } from '../../ui/Logo';
 import { Container } from '../Container';
 import styles from './Header.module.css';
 
@@ -25,7 +26,8 @@ export function Header() {
     <header className={[styles.header, scrolled && styles.scrolled].filter(Boolean).join(' ')}>
       <Container className={styles.inner}>
         <a href="#top" className={styles.brand}>
-          יולי יוגה
+          <Logo className={styles.logo} />
+          <span className={styles.wordmark}>יולי יוגה</span>
         </a>
         <nav className={styles.nav} aria-label="ניווט ראשי">
           {NAV_LINKS.map((link) => (

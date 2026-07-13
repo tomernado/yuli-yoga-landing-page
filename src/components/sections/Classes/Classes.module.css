@@ -44,9 +44,9 @@
 
 .cardImage {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 35%;
 }
 
 @media (min-width: 768px) {

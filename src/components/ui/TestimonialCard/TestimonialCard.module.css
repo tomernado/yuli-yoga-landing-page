@@ -2,42 +2,29 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-2);
   height: 100%;
-  padding: var(--space-8) var(--space-7) var(--space-6);
+  padding: var(--space-6) var(--space-5) var(--space-5);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
-  transition:
-    transform var(--duration-base) var(--ease-calm),
-    box-shadow var(--duration-base) var(--ease-calm);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
 }
 
 .quoteMark {
   position: absolute;
-  inset-block-start: 0.5rem;
-  inset-inline-start: var(--space-7);
+  inset-block-start: 0.25rem;
+  inset-inline-start: var(--space-5);
   font-family: var(--font-display);
-  font-size: 4.5rem;
+  font-size: 3rem;
   line-height: 1;
   color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   user-select: none;
-  transition: transform var(--duration-slow) var(--ease-calm);
-}
-
-.card:hover .quoteMark {
-  transform: translateY(-2px) scale(1.05);
 }
 
 .quote {
   margin: 0;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-snug);
   color: var(--color-text);
   white-space: pre-line;
@@ -48,7 +35,6 @@
   align-items: center;
   gap: var(--space-3);
   margin-top: auto;
-  padding-top: var(--space-3);
 }
 
 .avatar {
@@ -56,16 +42,16 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: var(--radius-full);
   background-color: var(--color-bg-alt);
   color: var(--color-primary);
   font-family: var(--font-display);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
 }
 
 .name {
   font-weight: 600;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
